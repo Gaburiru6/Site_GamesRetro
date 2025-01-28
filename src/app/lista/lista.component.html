@@ -1,0 +1,76 @@
+<app-pesquisar (filter)="filterGames($event)"></app-pesquisar>
+
+<div class="container">
+    <button 
+      mat-fab 
+      color="primary" 
+      class="add-button" 
+      (click)="toggleForm()">
+      Adicionar Jogo
+    </button>
+  
+    <div class="RetroGames-list">
+      <mat-list>
+        <mat-list-item *ngFor="let RetroGames of paginatedGames; let i = index">
+          <div class="RetroGames-info">
+            <div class="RetroGames-text">
+              <p><strong>{{ RetroGames.name }}</strong></p>
+              <p>História: {{ RetroGames.historia }} Preço: R$ {{ RetroGames.price }} Tipos: {{ RetroGames.tipos.join(', ') }}</p>
+              <p>Console: {{ RetroGames.console }}</p>
+            </div>
+            <div class="RetroGames-actions">
+              <button mat-raised-button color="accent" (click)="editGames(i)">Editar</button>
+              <button mat-raised-button color="warn" (click)="deleteGames(i)">Apagar</button>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    
+      <p *ngIf="filteredGames.length === 0">Nenhuma receita encontrada.</p>
+    
+      <mat-paginator #paginator [length]="filteredGames.length" 
+                     [pageSize]="itemsPerPage" 
+                     [pageSizeOptions]="[5]"
+                     (page)="pageChanged($event)">
+      </mat-paginator>
+    </div>
+
+    
+    <div class="form-container" *ngIf="showForm">
+      <button mat-icon-button class="close-button" (click)="toggleForm()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <h2>Adicionar</h2>
+      <form (ngSubmit)="addGame()">
+        <mat-form-field>
+          <input matInput placeholder="Nome" [(ngModel)]="formData.name" name="name" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <textarea matInput placeholder="História" [(ngModel)]="formData.historia" name="História" required></textarea>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Preço" [(ngModel)]="formData.price" name="price" type="number" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Console" [(ngModel)]="formData.console" name="console" type="string" required />
+        </mat-form-field>
+  
+        <div class="checkbox-group">
+          <h3>Selecione os Tipos</h3>
+          <div *ngFor="let type of TipoGames">
+            <mat-checkbox 
+              [checked]="formData.tipos.includes(type)" 
+              (change)="onTiposChange(type, $event.checked)">
+              {{ type }}
+            </mat-checkbox>
+          </div>
+        </div>
+  
+        <button mat-raised-button color="primary" type="submit">Adicionar jogo</button>
+      </form>
+    </div>
+  </div>
+  

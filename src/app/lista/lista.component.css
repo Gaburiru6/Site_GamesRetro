@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 200vh;
+}
+
+mat-paginator {
+  margin-top: 140px; 
+  border-radius: 20px; 
+  background-color: #2a2a60; 
+  color: white;
+}
+
+.add-button {
+  width: 120px;
+  position: fixed;
+  top: 60px; 
+  right: 20px; 
+  background-color: #0a2744; 
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #4c6e91; 
+}
+
+.form-container {
+  background-color: #0a2744; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+  width: 300px;
+  margin-top: 80px; 
+  align-self: center; 
+}
+
+.RetroGames-info {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
+  padding: 15px; 
+  margin-bottom: 20px; 
+  border: 1px solid #2f2a3a33; 
+  border-radius: 8px; 
+  color: white;
+  height:auto;
+}
+
+.RetroGames-text p {
+  margin: 20px 0; 
+  font-size: 20px; 
+  line-height: 5.5; 
+}
+
+.RetroGames-list {
+  background-color: #111a22;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: 850px;
+  height: auto; 
+  max-height: 100%; 
+  overflow-y: auto; 
+  word-wrap: break-word; 
+}
+
+.RetroGames-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1px;
+  position: relative;  
+  top: -25px;  
+  justify-content: flex-end;
+  width: 100%;  
+  z-index: 10;
+}
+
+.RetroGames-text {
+  display: flex; 
+  flex-direction: row;
+  gap: 2px;
+  width: 100%;
+}
+
+
+.close-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #18171f;
+}
+
+.close-button:hover {
+  color: #207d94;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #0a2744; 
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: white;
+}

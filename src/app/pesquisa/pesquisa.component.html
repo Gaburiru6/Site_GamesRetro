@@ -1,0 +1,15 @@
+<div class="search-form">
+    <h3>Filtrar por Tipos</h3>
+    <mat-checkbox [(ngModel)]="selectedCategories.aventura" (change)="onCategoryChange()">
+      Aventura
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="selectedCategories.plataforma" (change)="onCategoryChange()">
+      Plataforma
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="selectedCategories.acao" (change)="onCategoryChange()">
+      Ação
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="selectedCategories.rpg" (change)="onCategoryChange()">
+      Rpg
+    </mat-checkbox>
+  </div>

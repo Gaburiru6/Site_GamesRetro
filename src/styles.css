@@ -1,0 +1,23 @@
+
+html, body { 
+  height: 100%; 
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 100vh;
+  margin: 0;
+  background-color: #1a1a40; 
+  color: white; 
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  align-items: center;
+  border-radius: 50%;
+  color: white; 
+}
